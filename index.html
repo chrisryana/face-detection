@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Face Detection</title>
-    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Эмоциональный квиз</title>
+    <link rel="stylesheet" href="main.css" />
 </head>
+
 <body>
-    <div class="wrapper">
+    <h1 class="visually-hidden">Игра повтори эмоцию по картинке</h1>
+    <main class="content">
+        <div class="row">
+            <div class="column">
+                <section class="card questions">
+                    <h2 class="questions__tagline">Вопрос 1</h2>
+                    <div class="questions__images">
+                        <div class="questions__image-wrapper">
+                            <img src="https://cs5.pikabu.ru/post_img/2015/10/09/4/1444367594_252211042.gif"
+                                alt="Кадр из фильма Дежурный папа, когда персонаж Эдди Мерфи оглядывает туалет после ребенка"
+                                class="questions__image" />
+                        </div>
+                        <div class="video-placeholder questions__image-wrapper"></div>
+                        <!-- <video id="video" width="312" height="250" autoplay muted></video> -->
+                    </div>
+                    <ul class="questions__answers">
+                        <li class="questions__answers-item answers-item">
+                            <button class="answers-item__button">вариант 1</button>
+                        </li>
+                        <li class="questions__answers-item answers-item">
+                            <button class="answers-item__button">вариант 2</button>
+                        </li>
+                        <li class="questions__answers-item answers-item">
+                            <button class="answers-item__button">вариант 3</button>
+                        </li>
+                        <li class="questions__answers-item answers-item">
+                            <button class="answers-item__button">вариант 4</button>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="column">
+                <section class="card timer">
+                    <h2 class="visually-hidden">Осталось:</h2>
+                    30 секунд
+                </section>
+                <section class="card rules">
+                    <h2 class="rules__tagline">Как играть?</h2>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- <div class="wrapper">
         <div class="loader">Распознаю твое личико (ಠ_ಠ)...</div>
-        <video id="video" width="720" height="576" autoplay muted ></video>
+        <video id="video" width="720" height="576" autoplay muted></video>
     </div>
     <script src="face-api.min.js"></script>
-    <script src="main.js"></script>
+    <script src="main.js"></script> -->
 </body>
+
 </html>

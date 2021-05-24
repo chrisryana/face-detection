@@ -9,6 +9,36 @@ body {
     box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 .wrapper {
     padding: 20px;
     height: 100vh;
@@ -39,4 +69,71 @@ body {
 
 canvas {
     position: absolute;
+}
+
+.video-placeholder {
+    display: inline-block;
+    width: 312px;
+    height: 250px;
+    background-color: black;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 885px;
+    padding: 2.3%;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    margin-right: 2.3%;
+    flex-grow: 1;
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid darkblue;
+    border-radius: 3px;
+    background-color: lightblue;
+    margin-bottom: 15px;
+}
+
+.questions__images {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.questions__image-wrapper {
+    flex-grow: 1;
+}
+
+.answers-item {
+    margin-bottom: 10px;
+}
+
+.answers-item:last-child {
+    margin-bottom: 0;
+}
+
+.answers-item__button {
+    font-size: 1.3rem;
+    display: block;
+    width: 100%;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 3px;
+}
+
+.answers-item__button:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
 }
