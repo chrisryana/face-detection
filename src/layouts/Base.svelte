@@ -1,5 +1,6 @@
 <script>
     import Card from '../components/Card.svelte';
+    import Timer from '../components/Timer.svelte';
 </script>
 
 <div class="row">
@@ -8,15 +9,12 @@
             <slot/>
         </Card>
     </div>
-    <!-- <div class="column">
-			<section class="card timer">
-				<h2 class="visually-hidden">Осталось:</h2>
-				30 секунд
-			</section>
-			<section class="card rules">
-				<h2 class="rules__tagline">Как играть?</h2>
-			</section>
-		</div> -->
+    <aside class="column">
+        <Timer onEnd={() => {}}/>
+        <section class="card rules">
+            <h2 class="rules__tagline">Как играть?</h2>
+        </section>
+    </aside>
 </div>
 
 <style>
