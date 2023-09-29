@@ -4,7 +4,7 @@
 	import Result from './components/Result.svelte';
 	import { QUESTIONS } from './data/questions';
 
-	let questionIndex = -1;
+	let questionIndex = 0;
 	let rightAnswersCount = 0;
 
 	function setNext() {
