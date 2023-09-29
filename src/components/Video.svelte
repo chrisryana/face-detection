@@ -2,6 +2,8 @@
 <script>
     import { onMount, onDestroy } from 'svelte';
 
+    export let onChangeExpression;
+
     let status = 'loading';
     let video;
     let wrapper;
@@ -23,7 +25,8 @@
                     window.faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
                     resizedDetections.forEach(({expressions}) => {
                         const sorted = expressions.asSortedArray();
-                        console.log(sorted[0]);
+                        // console.log(sorted[0]);
+                        onChangeExpression(sorted[0])
 
                     });
         

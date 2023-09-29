@@ -4,6 +4,20 @@
     import { QUESTIONS } from '../data/questions';
 
     export let questionIndex;
+		let isCorrectAnswer = false;
+		const correctAnswer = QUESTIONS[questionIndex].variants.find(({isCorrect}) => isCorrect)
+
+		let onChangeExpression = (detection) => {
+			let timer;
+
+			if (detection.expression === correctAnswer.emotion) {
+				timer = setTimeout(() => {
+					isCorrectAnswer = true;
+				}, 2000)
+			} else {
+				clearTimeout(timer)
+			}
+		}
 </script>
 
 <Base>
@@ -15,12 +29,12 @@
         </div>
         <!-- <div class="video-placeholder questions__image-wrapper"></div> -->
         <!-- <video id="video" width="312" height="250" autoplay muted></video> -->
-        <Video />
+        <Video onChangeExpression={onChangeExpression} />
     </div>
     <ul class="questions__answers">
         {#each QUESTIONS[questionIndex].variants as { emotion, isCorrect }, i}
             <li class="questions__answers-item answers-item">
-                <button class="answers-item__button">{emotion}</button>
+                <button class={`answers-item__button ${isCorrectAnswer && correctAnswer.emotion === emotion ? 'answers-item__button_correct' : ''}`}>{emotion}</button>
             </li>
         {/each}
     </ul>
@@ -69,5 +83,9 @@
 		cursor: pointer;
 		background-color: black;
 		color: white;
+	}
+
+	.answers-item__button_correct {
+		background-color: lightgreen;
 	}
 </style>
